@@ -63,4 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach(el => {
         revealObserver.observe(el);
     });
+
+    // Form Submission
+    const appointmentForm = document.getElementById('appointmentForm');
+
+    if (appointmentForm) {
+        appointmentForm.addEventListener('submit', () => {
+            // Show loading state on button while the form submits and redirects
+            const submitBtn = appointmentForm.querySelector('button[type="submit"]');
+            submitBtn.textContent = 'Подождите...';
+            submitBtn.style.opacity = '0.7';
+        });
+    }
 });
